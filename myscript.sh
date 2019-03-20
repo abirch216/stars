@@ -6,24 +6,30 @@
 # echo "$x copied"
 # done
 
-release=(classes/*)
+RELEASECLASSES=(classes/*)
 
-releasefolder=~/Documents/testscript/classes
+RELEASEFOLDER=~/Documents/stars/classes
 xml="meta.xml"
 cd ..
-cd master
-master=(classes/*)
+cd tools
+MASTERCLASSES=(classes/*)
 
-for x in "${release[@]}" 
+for x in "${RELEASECLASSES[@]}" 
 do
 echo ---"$x"---
-  for y in "${master[@]}"
+  for y in "${MASTERCLASSES[@]}"
   do
   echo ---"$y"---
     if [ "$x-$xml" == "$y" ]
       then
         echo "$x-$xml and $y MATCH!"
-        cp "$y" $releasefolder
+        cp "$y" $RELEASEFOLDER
     fi
   done
 done
+
+cd ..
+cd stars
+git add .
+git commit -m "class meta-xml files"
+git push
