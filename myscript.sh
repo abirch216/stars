@@ -5,10 +5,10 @@
 # cp -r $x .
 # echo "$x copied"
 # done
-if [ -d /classes ]
+RELEASEFOLDER=~/Documents/stars/classes
+if [ -d "$RELEASEFOLDER" ]
 then
   RELEASECLASSES=(classes/*)
-  RELEASEFOLDER=~/Documents/stars/classes
   xml="meta.xml"
   cd ..
   cd tools
