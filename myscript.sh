@@ -16,6 +16,7 @@ then
 
   for x in "${RELEASECLASSES[@]}" 
   do
+    echo "$x"
     for y in "${MASTERCLASSES[@]}"
     do
       if [ "$x-$xml" == "$y" ]
